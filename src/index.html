@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corgile Ltd. - Coming Soon</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f202a;
+            color: #fff;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f202a 0%, #1a2f3d 100%);
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .highlight {
+            color: #FFD700;
+        }
+
+        .btn-primary {
+            background-color: #FFD700;
+            color: #0f202a;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen gradient-bg flex items-center justify-center p-4">
+        <div class="card rounded-xl p-8 md:p-12 w-full max-w-3xl text-center">
+            <div class="mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    Welcome to <span class="highlight">Corgile Ltd.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">
+                    Software solutions that drive business success
+                </p>
+                <div class="h-px bg-gray-700 w-24 mx-auto mb-8"></div>
+            </div>
+
+            <div class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Who We Are</h2>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Corgile Ltd. is a software development company specializing in building innovative solutions 
+                    for businesses. We focus on creating efficient, scalable, and user-friendly applications 
+                    that help our clients achieve their goals.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Our website is currently under construction, but we're actively working on bringing you 
+                    an enhanced digital experience. In the meantime, we'd love to hear from you!
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
+                <p class="text-gray-300">
+                    Interested in working with us or learning more about our services?
+                </p>
+                <a href="mailto:contact@corgile.com" class="btn-primary inline-block py-3 px-8 rounded-lg font-semibold">
+                    Contact Us
+                </a>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-700 text-sm text-gray-400">
+                <p>© 2024 Corgile Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
