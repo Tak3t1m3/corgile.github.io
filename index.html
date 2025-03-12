@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corgile Ltd. - Software Solutions</title>
+    <!-- Favicon -->
+    <link rel="icon" href="static/logo.png" type="image/png">
+    <link rel="shortcut icon" href="static/logo.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -15,7 +18,7 @@
         
         h1, h2, h3, .heading-font {
             font-family: 'Anton', sans-serif;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.05em;
         }
         
         .gradient-bg {
@@ -115,6 +118,225 @@
                 width: 100%;
             }
         }
+        
+        .project-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.75rem;
+        height: 400px;
+        background-color: rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .project-image-container {
+        height: 60%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+    }
+    
+    .project-card:hover .project-image-container {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+    }
+    
+    .project-card:hover .project-image {
+        transform: scale(1.1);
+    }
+    
+    .project-preview {
+        padding: 1.25rem;
+        height: 40%;
+        background: rgba(41, 51, 60, 0.85);
+        transition: opacity 0.3s ease;
+    }
+    
+    .project-card:hover .project-preview {
+        opacity: 0;
+    }
+    
+    .project-preview h3 {
+        color: #78D1FE;
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-preview p {
+        font-size: 0.9rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(41, 51, 60, 0.95);
+        backdrop-filter: blur(4px);
+        padding: 1.5rem;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 20;
+    }
+    
+    .project-card:hover .project-overlay {
+        transform: translateY(0);
+    }
+    
+    .read-more {
+        color: #78D1FE;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-top: 0.5rem;
+        display: inline-block;
+    }
+        
+        .logo-container {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        
+        .carousel-slide {
+            display: none;
+            width: 100%;
+        }
+        
+        .carousel-slide.active {
+            display: block;
+            animation: fadeIn 0.8s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+        
+        .project-carousel-card {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-carousel-card:hover .project-carousel-image {
+            transform: scale(1.05);
+        }
+        
+        .project-carousel-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: rgba(41, 51, 60, 0.85);
+            backdrop-filter: blur(4px);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-carousel-card:hover .project-carousel-info {
+            transform: translateY(-10px);
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(41, 51, 60, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-nav:hover {
+            background: rgba(120, 209, 254, 0.7);
+        }
+        
+        .carousel-prev {
+            left: 20px;
+        }
+        
+        .carousel-next {
+            right: 20px;
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background: #78D1FE;
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body class="gradient-bg">
@@ -145,6 +367,11 @@
         <!-- Hero Section -->
         <div class="flex-grow flex items-center justify-center p-4 py-16">
             <div class="max-w-6xl w-full mx-auto text-center">
+                <!-- Logo -->
+                <div class="logo-container mb-6">
+                    <img src="static/logo.png" alt="Corgile Logo" class="logo">
+                </div>
+                
                 <h1 class="text-5xl md:text-6xl font-bold mb-6">
                     Welcome to <span class="highlight">CORGILE</span>
                 </h1>
@@ -182,6 +409,63 @@
                         </div>
                         <h3 class="text-xl font-semibold mb-4">IT Project Management</h3>
                         <p class="text-gray-300">Comprehensive project management services ensuring successful delivery of your technology initiatives.</p>
+                    </div>
+                </div>
+                
+                <!-- Projects Section -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-semibold mb-8">Our Projects</h2>
+                    
+                    <div class="carousel-container">
+                        <!-- Carousel Navigation -->
+                        <div class="carousel-nav carousel-prev">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </div>
+                        <div class="carousel-nav carousel-next">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                        
+                        <!-- Carousel Slides -->
+                        <div class="carousel-slide active">
+                            <div class="project-carousel-card">
+                                <img src="static/valuation.jpg" alt="Vehicle Valuation System" class="project-carousel-image">
+                                <div class="project-carousel-info">
+                                    <h3 class="text-2xl font-semibold mb-3 highlight">Vehicle Valuation System</h3>
+                                    <p class="text-gray-300">A comprehensive Django-based application for managing vehicle valuations and generating detailed reports. This system allows users to create, manage, and generate PDF reports for both valuation and mechanical assessments of vehicles.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="project-carousel-card">
+                                <img src="static/amsa-seeds.jpg" alt="AMSA Seed Platform" class="project-carousel-image">
+                                <div class="project-carousel-info">
+                                    <h3 class="text-2xl font-semibold mb-3 highlight">AMSA Seed Platform</h3>
+                                    <p class="text-gray-300">A Django-based web application designed to showcase and manage commercial agricultural seed products. This platform serves as both a product catalog and information hub for professional growers and agricultural businesses. Features bilingual support with English/Spanish language toggle functionality.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <div class="project-carousel-card">
+                                <img src="static/agrexus.jpg" alt="Agrexus - Agricultural Data Analytics Platform" class="project-carousel-image">
+                                <div class="project-carousel-info">
+                                    <h3 class="text-2xl font-semibold mb-3 highlight">Agrexus - Agricultural Data Analytics</h3>
+                                    <p class="text-gray-300">A comprehensive agricultural data analytics platform empowering Jamaica's agricultural sector with real-time market analytics, interactive data visualization, and customized insights. Built with Django and featuring interactive charts for commodity prices, market trends, and agricultural forecasting to support data-driven decision making.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <div class="carousel-dot active" data-slide="0"></div>
+                            <div class="carousel-dot" data-slide="1"></div>
+                            <div class="carousel-dot" data-slide="2"></div>
+                        </div>
                     </div>
                 </div>
                 
@@ -281,6 +565,59 @@
                     }, 20); // Small timeout for smoother performance
                 }
             }, { passive: true });
+        });
+    </script>
+
+    <!-- Carousel functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Deactivate all dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Show the current slide and activate its dot
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            // Next slide
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            });
+            
+            // Previous slide
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            });
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+            
+            // Auto-advance slides every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 5000);
         });
     </script>
 </body>
